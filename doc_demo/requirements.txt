@@ -1,0 +1,34 @@
+# COBOL Documentation Pipeline
+
+## Requirements
+
+# Core
+jpype1>=1.5.0        # Java bridge for ProLeap
+jinja2>=3.1.0        # Template engine
+
+# LangGraph + LLM
+langgraph>=0.0.30
+langchain>=0.1.0
+langchain-groq>=0.1.0
+groq>=0.4.0            # Direct Groq SDK for Chat CLI
+langchain-google-vertexai>=2.0.0   # Vertex AI Gemini
+google-cloud-aiplatform>=1.60.0   # Vertex AI SDK (transitive but explicit)
+langchain-google-genai 
+
+# Database
+neo4j>=5.15.0
+
+# Utilities
+rich>=13.0.0         # CLI output
+pydantic>=2.0.0      # Data validation
+python-dotenv>=1.0.0 # Environment variables
+fpdf2>=2.7.0         # PDF report generation
+streamlit
+graphviz
+pandas
+plotly
+pyvis>=0.3.2          # Interactive network graphs
+networkx>=3.0         # Graph analysis for call graph
+opentelemetry-api>=1.36.0
+opentelemetry-sdk>=1.36.0
+opentelemetry-exporter-otlp-proto-grpc>=1.36.0

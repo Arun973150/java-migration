@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "stats": {
+    "program_docs_expected": 44,
+    "program_docs_missing": 0,
+    "empty_sections": 0,
+    "missing_sections": 0,
+    "broken_links": 66,
+    "unknown_identifier_refs": 73,
+    "citations_docs_checked": 3,
+    "citations_invalid": 30,
+    "citations_below_min": 2,
+    "coverage_expected_refs": 639,
+    "coverage_missing_refs": 0,
+    "prompt_ledgers_checked": 3,
+    "prompt_expected_facts": 0,
+    "prompt_facts_in_context": 0,
+    "prompt_facts_in_document": 0
+  },
+  "structural_errors": [],
+  "structural_warnings": [
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SDSF.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/DFHCSDUP.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SDSF.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/DFSRRC00.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SDSF.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SDSF.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SORT.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IKJEFT01.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IEFBR14.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SORT.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IEFBR14.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/SDSF.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IDCAMS.md",
+    "Broken link in diagrams\\data-flow-chains.md: -> ../programs/IEFBR14.md"
+  ],
+  "factual_errors": [
+    "CBACT01C.md references unknown identifiers: CEE3ABD, COBDATFT",
+    "CBACT02C.md references unknown identifiers: CEE3ABD",
+    "CBACT03C.md references unknown identifiers: CEE3ABD",
+    "CBACT04C.md references unknown identifiers: CEE3ABD",
+    "CBCUS01C.md references unknown identifiers: CEE3ABD",
+    "CBEXPORT.md references unknown identifiers: CEE3ABD",
+    "CBIMPORT.md references unknown identifiers: CEE3ABD",
+    "CBSTM03A.md references unknown identifiers: CEE3ABD",
+    "CBTRN01C.md references unknown identifiers: CEE3ABD",
+    "CBTRN02C.md references unknown identifiers: CEE3ABD",
+    "CBTRN03C.md references unknown identifiers: CEE3ABD",
+    "COADM01C.md references unknown identifiers: CA00, ERR-FLG, USRSEC",
+    "COBIL00C.md references unknown identifiers: ACCTDAT, CB00, CXACAIX, ERR-FLG",
+    "COBSWAIT.md references unknown identifiers: MVSWAIT",
+    "COMEN01C.md references unknown identifiers: CM00, ERR-FLG, USRSEC"
+  ],
+  "coverage_gaps": [],
+  "prompt_coverage_warnings": [],
+  "citation_errors": [
+    "Program/CBACT04C: 5 hallucinated paragraph(s): ACCOUNT-FILE, DISCGRP-FILE, TCATBAL-FILE, TRANSACT-FILE, XREF-FILE",
+    "Program/COPAUS2C: 1 hallucinated paragraph(s): TRANSACTION-AMT",
+    "Program/CBACT01C: 24 hallucinated paragraph(s): ACCTFILE-FILE, ARR-ACCT-CURR-BAL, ARR-ACCT-CURR-CYC-DEBIT, ARR-ACCT-ID, ARR-ARRAY-REC ..."
+  ],
+  "citation_warnings": [
+    "Program/CBACT04C: only 0 paragraph citation(s); expected >= 3",
+    "Program/CBACT01C: only 0 paragraph citation(s); expected >= 3"
+  ]
+}

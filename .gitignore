@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Java / Maven
+target/
+*.class
+
+# OS / IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Environment
+.env
+
+# Docker leftovers
+*.tar

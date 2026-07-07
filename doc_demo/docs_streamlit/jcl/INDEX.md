@@ -1,0 +1,68 @@
+# JCL Jobs Catalog
+
+> **Total Jobs:** 55
+> All batch JCL jobs found in the repository.
+
+---
+
+| Job Name | File | Description | Steps | Programs Called |
+|----------|------|-------------|-------|----------------|
+| [ACCTFILE](ACCTFILE.md) | `ACCTFILE.jcl` | Delete define Account Data | 3 | IDCAMS |
+| [CARDFILE](CARDFILE.md) | `CARDFILE.jcl` | Delete define card data | 8 | SDSF, IDCAMS |
+| [CBADMCDJ](CBADMCDJ.md) | `CBADMCDJ.jcl` |  | 1 | DFHCSDUP |
+| [CBEXPORT](CBEXPORT.md) | `CBEXPORT.jcl` | Export Customer Data for Migration | 2 | IDCAMS, CBEXPORT |
+| [CBIMPORT](CBIMPORT.md) | `CBIMPORT.jcl` | Import CARDDEMO Data | 1 | CBIMPORT |
+| [CBLDBMS](CBLDBMS.md) | `BMSCMP.jcl` | Compile BMS Map | 2 | SDSF |
+| [CBPAUP0J](CBPAUP0J.md) | `CBPAUP0J.jcl` | CARDDEMO | 1 | DFSRRC00 |
+| [CICCMP](CICCMP.md) | `CICCMP.jcl` | Compile CICS Program | 2 | SDSF |
+| [CIDBCMP](CIDBCMP.md) | `CICDBCMP.jcl` | Compile CICS DB2 PGM | 1 | - |
+| [CLOSEFIL](CLOSEFIL.md) | `CLOSEFIL.jcl` | Close files in CICS | 1 | SDSF |
+| [CNJBATMP](CNJBATMP.md) | `BATCMP.jcl` | Compile Batch COBOL Program | 1 | - |
+| [COMBTRAN](COMBTRAN.md) | `COMBTRAN.jcl` | COMBINE TRANSACTIONS | 2 | SORT, IDCAMS |
+| [CREADB2](CREADB2.md) | `CREADB21.jcl` |  | 5 | IKJEFT01, IEFBR14 |
+| [CREASTMT](CREASTMT.md) | `CREASTMT.JCL` | Create Statement | 5 | IDCAMS, SORT, IEFBR14, CBSTM03A |
+| [CUSTFILE](CUSTFILE.md) | `CUSTFILE.jcl` | DEFINE CUSTOMER FILE | 5 | SDSF, IDCAMS |
+| [DALYREJS](DALYREJS.md) | `DALYREJS.jcl` | DEF GDG FOR REJS | 1 | IDCAMS |
+| [DBPAUTP0](DBPAUTP0.md) | `DBPAUTP0.jcl` | DBPAUTP0 DB UNLOAD | 2 | IEFBR14, DFSRRC00 |
+| [DEFCUST](DEFCUST.md) | `DEFCUST.jcl` | Define Customer Data File | 2 | IDCAMS |
+| [DEFGDGB](DEFGDGB.md) | `DEFGDGB.jcl` | DEF GDG BASES | 1 | IDCAMS |
+| [DEFGDGD](DEFGDGD.md) | `DEFGDGD.jcl` | DEF DB2 GDG | 6 | IDCAMS, IEBGENER |
+| [DISCGRP](DISCGRP.md) | `DISCGRP.jcl` | DEFINE DISCLOSURE GROUP FILE | 3 | IDCAMS |
+| [DUSRSECJ](DUSRSECJ.md) | `DUSRSECJ.jcl` | DEF USRSEC FILE | 4 | IEFBR14, IEBGENER, IDCAMS |
+| [ESDSRRDS](ESDSRRDS.md) | `ESDSRRDS.jcl` | DEF ESDS RRDS   | 6 | IEFBR14, IEBGENER, IDCAMS |
+| [FTPJCLS](FTPJCLS.md) | `FTPJCL.JCL` | FTP JCL | 1 | FTP |
+| [IMSMQCMP](IMSMQCMP.md) | `IMSMQCMP.jcl` |  | 3 | DFHECP1, IGYCRCTL, IEBGENER |
+| [INTCALC](INTCALC.md) | `INTCALC.jcl` | INTEREST CALCULATOR | 1 | CBACT04C |
+| [INTRDRJ1](INTRDRJ1.md) | `INTRDRJ1.JCL` |  | 2 | IDCAMS, IEBGENER |
+| [INTRDRJ2](INTRDRJ2.md) | `INTRDRJ2.JCL` |  | 1 | IDCAMS |
+| [LISTFILS](LISTFILS.md) | `LISTCAT.jcl` | CARDDEMO | 2 | IEFBR14, IDCAMS |
+| [LOADPADB](LOADPADB.md) | `LOADPADB.JCL` | M2APP | 1 | DFSRRC00 |
+| [MNTTRDB2](MNTTRDB2.md) | `MNTTRDB2.jcl` |  | 1 | IKJEFT01 |
+| [OPENFIL](OPENFIL.md) | `OPENFIL.jcl` | Open files in CICS | 1 | SDSF |
+| [POSTTRAN](POSTTRAN.md) | `POSTTRAN.jcl` | POSTTRAN | 1 | CBTRN02C |
+| [PRTCATBL](PRTCATBL.md) | `PRTCATBL.jcl` | Print Trasaction Category Balance File | 3 | IEFBR14, SORT |
+| [RACFCMDS](RACFCMDS.md) | `RACFCMDS.jcl` |  | 1 | IKJEFT01 |
+| [READACCT](READACCT.md) | `READACCT.jcl` | READACCT | 2 | IEFBR14, CBACT01C |
+| [READCARD](READCARD.md) | `READCARD.jcl` | READCARD | 1 | CBACT02C |
+| [READCUST](READCUST.md) | `READCUST.jcl` | Read Customer Data file | 1 | CBCUS01C |
+| [READXREF](READXREF.md) | `READXREF.jcl` | Read Cross Ref file | 1 | CBACT03C |
+| [REPRTEST](REPRTEST.md) | `REPRTEST.jcl` | REPRO TEST JOB | 1 | - |
+| [REPTFILE](REPTFILE.md) | `REPTFILE.jcl` | DEF GDG FOR REPORT FILE | 1 | IDCAMS |
+| [SORTTEST](SORTTEST.md) | `SORTTEST.jcl` | SORT STEP TESTING | 1 | SORT |
+| [TCATBALF](TCATBALF.md) | `TCATBALF.jcl` | DEFINE TRANCAT BAL | 3 | IDCAMS |
+| [TRANBKP](TRANBKP.md) | `TRANBKP.jcl` | REPRO and Delete Transaction Master | 3 | IDCAMS |
+| [TRANCATG](TRANCATG.md) | `TRANCATG.jcl` | DEFINE TRAN CATEGORY | 3 | IDCAMS |
+| [TRANEXTR](TRANEXTR.md) | `TRANEXTR.jcl` | EXTRACT TRAN TYPE | 5 | IEBGENER, IEFBR14, IKJEFT01 |
+| [TRANFILE](TRANFILE.md) | `TRANFILE.jcl` | DEFINE TRANSACTION MASTER | 8 | SDSF, IDCAMS |
+| [TRANIDX](TRANIDX.md) | `TRANIDX.jcl` | Define AIX on Transaction Master | 3 | IDCAMS |
+| [TRANREPT](TRANREPT.md) | `TRANREPT.jcl` | TRANSACTION REPORT | 3 | SORT, CBTRN03C |
+| [TRANTYPE](TRANTYPE.md) | `TRANTYPE.jcl` | DEFINE TRAN TYPE | 3 | IDCAMS |
+| [TXT2PDF1](TXT2PDF1.md) | `TXT2PDF1.JCL` |  | 1 | IKJEFT1B |
+| [UNLDGSAM](UNLDGSAM.md) | `UNLDGSAM.JCL` | M2APP | 1 | DFSRRC00 |
+| [UNLDPADB](UNLDPADB.md) | `UNLDPADB.JCL` | M2APP | 2 | IEFBR14, DFSRRC00 |
+| [WAITSTEP](WAITSTEP.md) | `WAITSTEP.jcl` | WAIT STEP | 1 | COBSWAIT |
+| [XREFFILE](XREFFILE.md) | `XREFFILE.jcl` | Delete define cross ref file | 6 | IDCAMS |
+
+---
+
+*Generated 2026-03-16 19:39*

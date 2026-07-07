@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 512, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 329, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 523, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\Downloads\DemoUStall0513-main-updated\DemoUStall0513-main-updated\doc_demo\src\app.py", line 4677, in page_unisys_java
+    result = generate_java_for_program(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\Downloads\DemoUStall0513-main-updated\DemoUStall0513-main-updated\doc_demo\src\java_migration_generator.py", line 286, in generate_java_for_program
+    context = build_program_java_context(program_id, project_root)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\Downloads\DemoUStall0513-main-updated\DemoUStall0513-main-updated\doc_demo\src\java_migration_generator.py", line 105, in build_program_java_context
+    ctx = _program_node_context(session, program_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\Downloads\DemoUStall0513-main-updated\DemoUStall0513-main-updated\doc_demo\src\java_migration_generator.py", line 23, in _program_node_context
+    rec = session.run("MATCH (p:Program {id:$id}) RETURN p", id=program_id).single()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\work\session.py", line 305, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\work\session.py", line 126, in _connect
+    super()._connect(
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\work\workspace.py", line 181, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_pool.py", line 678, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_pool.py", line 418, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_pool.py", line 231, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_pool.py", line 638, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 368, in open
+    s, protocol_version = BoltSocket.connect(
+                          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 380, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7687 (resolved to ('[::1]:7687', '127.0.0.1:7687')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)

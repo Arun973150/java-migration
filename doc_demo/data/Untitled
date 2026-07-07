@@ -1,0 +1,331 @@
+
+1. How Swimm Produces Documentation (Internal Working)
+
+Swimm does not “write docs from text”.
+It builds a structured knowledge model of the repository first.
+
+1.1 Repository Ingestion (Local Analysis)
+What happens
+
+Swimm scans the entire COBOL repository locally
+
+No cloud upload (important for enterprise systems)
+
+It collects:
+
+.cbl / .cob files
+
+Program boundaries
+
+COPYBOOK usage
+
+Entry points
+
+CALL statements
+
+File I/O operations
+
+Control structures (IF, PERFORM, EVALUATE)
+
+Output
+
+A raw structural index of the codebase.
+
+Think of this as “indexing before understanding”.
+
+1.2 COBOL Parsing & Static Analysis
+
+Swimm uses language-aware static analysis, not regex.
+
+It builds:
+
+AST (Abstract Syntax Tree) for each program
+
+Symbol tables (variables, records, files)
+
+Control Flow Graph (CFG)
+
+Call Graph (program → program)
+
+Why this matters
+
+This enables:
+
+Accurate diagrams
+
+Line-level linking
+
+Program responsibility detection
+
+1.3 Knowledge Base Construction (Core Step)
+
+All extracted data is merged into a Knowledge Base (KB).
+
+KB contains:
+
+Programs as nodes
+
+Sections & paragraphs as sub-nodes
+
+Calls & data flows as edges
+
+File and DB interactions
+
+Entry → exit paths
+
+Conceptually:
+
+Program A
+ ├─ Section X
+ │   ├─ Paragraph P
+ ├─ CALL → Program B
+ └─ READ → CUSTOMER-FILE
+
+
+⚠️ This KB is the single source of truth.
+
+1.4 Semantic Grouping (Module & Sub-Module Detection)
+
+Using the KB, Swimm identifies:
+
+Logical groupings of programs
+
+Menu-driven programs
+
+Business logic clusters
+
+Utility programs
+
+Techniques used
+
+Call frequency analysis
+
+Entry-point clustering
+
+Naming patterns
+
+Data access similarity
+
+Result
+
+Suggested modules & sub-modules, exactly like you saw in the video.
+
+1.5 AI-Assisted Explanation Layer
+
+Now AI is applied on top of structured data (important).
+
+AI does:
+
+Convert program logic → natural language
+
+Explain intent, not syntax
+
+Generate walkthroughs
+
+Because AI reads:
+
+AST + CFG
+
+Not raw COBOL text
+
+This avoids hallucination.
+
+1.6 Markdown Document Generation
+
+From the KB + AI explanations, Swimm generates .md files.
+
+Each document includes:
+
+Headings
+
+Text explanations
+
+Code references
+
+Diagram placeholders
+
+Metadata (file, line numbers)
+
+Example metadata (hidden):
+
+program: customer_menu.cbl
+section: MAIN-PARA
+lines: 120–210
+
+2. How Swimm Displays the Documentation (UI + Interaction)
+
+This is where your feature requirements come alive.
+
+2.1 IDE-Embedded Markdown Renderer
+
+Docs are rendered inside VS Code
+
+Looks like normal Markdown
+
+But enhanced with IDE commands
+
+Why this matters
+
+No context switching
+
+Developers trust IDE-native tools
+
+2.2 Interactive Overview Document
+What is shown
+
+Repository description
+
+Major modules
+
+High-level diagrams
+
+How it works
+
+Each module name is a clickable reference
+
+Clicking updates:
+
+Center panel (doc)
+
+Diagram focus
+
+This is stateful Markdown, not static.
+
+2.3 Diagram Generation & Display
+How diagrams are produced
+
+From the KB:
+
+Call graph → component diagram
+
+CFG → flow diagram
+
+Dependency graph → architecture diagram
+
+Rendered using:
+
+SVG / Mermaid / internal graph engine
+
+Diagram Interactivity
+
+Each node contains:
+
+node_id → program → section → line range
+
+
+So:
+
+Click diagram block
+
+IDE opens correct file
+
+Cursor jumps to exact paragraph
+
+This satisfies your live linking requirement.
+
+2.4 Program-Level Documentation Display
+
+When a user clicks a program:
+
+UI updates:
+
+Loads program-specific .md
+
+Shows:
+
+Purpose
+
+Walkthrough
+
+Diagrams
+
+Linked code blocks
+
+Example interaction
+
+Click:
+
+Customer Menu Program
+
+
+Result:
+
+Opens customer_menu.md
+
+Diagram + explanation
+
+Click paragraph → opens COBOL file
+
+2.5 Live Code Linking (Critical Feature)
+How it works internally
+
+Markdown links are not URLs, they are IDE commands:
+
+command:vscode.open?file=customer.cbl&line=245
+
+User experience
+
+One click
+
+File opens
+
+Correct line highlighted
+
+This creates bidirectional navigation:
+
+Docs → Code
+Code → Docs
+
+2.6 Editable Markdown (Living Documentation)
+Storage
+
+.md files live inside the repo
+
+Version controlled
+
+Editing
+
+Developers can:
+
+Add explanations
+
+Add business rules
+
+Clarify logic
+
+Safety
+
+Swimm:
+
+Preserves manual edits
+
+Regenerates only machine sections
+
+So docs don’t get overwritten.
+
+2.7 Fast Re-Analysis Workflow
+
+When code changes:
+
+File watcher detects update
+
+Only affected ASTs are rebuilt
+
+KB is updated incrementally
+
+Docs & diagrams refresh in seconds
+
+This is why the video shows very fast re-analysis.
+
+3. Feature-to-Requirement Mapping (Very Important)
+Your Requirement	How Swimm Implements It
+Interactive docs	IDE-rendered enhanced Markdown
+Live links	IDE command URIs
+Overview	KB-driven summary doc
+Diagrams	Graphs from AST + CFG
+Program deep dive	Program-level MD files
+Editable docs	Repo-stored Markdown
+Fast re-run	Incremental static analysis
+4. One Paragraph You Can Directly Use (Final)
+
+“Swimm generates documentation by first performing a full static analysis of the COBOL repository to construct a structured knowledge base representing programs, control flow, and dependencies. AI is then applied on top of this model to generate natural-language explanations and walkthroughs, which are rendered as interactive Markdown documents within the IDE. These documents include automatically generated diagrams and live-linked references that allow developers to navigate directly from documentation elements to exact source code locations, creating a fully interactive and continuously updated documentation experience
