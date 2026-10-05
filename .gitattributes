@@ -1,0 +1,4 @@
+aws-mainframe-modernization-carddemo/** linguist-vendored
+doc_demo/carddemo/** linguist-vendored
+doc_demo/proleap-cobol-parser/** linguist-vendored
+lib/** linguist-vendored
